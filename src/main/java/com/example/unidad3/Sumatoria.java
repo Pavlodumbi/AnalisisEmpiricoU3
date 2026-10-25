@@ -13,16 +13,16 @@ public class Sumatoria {
     }
 
     public static long sumatoriaDeGauss0aN(long n){
-        long tiempoActual = System.nanoTime();
+        long tiempoInicio = System.nanoTime();
         long suma = (n*(n+1))/2;
-        return System.nanoTime() - tiempoActual;
+        return System.nanoTime() - tiempoInicio;
     }
 
 
     public static long sumaRecursiva0aN(long n){
-        long tiempoActual = System.nanoTime();
+        long tiempoInicio = System.nanoTime();
         long suma = sumaRecursiva0aNinterna(n);
-        return System.nanoTime() - tiempoActual;
+        return System.nanoTime() - tiempoInicio;
     }
 
     private static long sumaRecursiva0aNinterna(long n){

@@ -12,9 +12,7 @@ public class Medicion {
         return tiempo;
     }
 
-    public long getN(){
-        return  n;
+    public long getN() {
+        return n;
     }
-
-
 }

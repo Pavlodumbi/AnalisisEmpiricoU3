@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 
 import java.util.ArrayList;
 
-public class HelloApplication extends Application {
+public class SolucionesApplication extends Application {
     BorderPane pane;
     ArrayList<Medicion> iterativos;
     ArrayList<Medicion> gaussianos;
