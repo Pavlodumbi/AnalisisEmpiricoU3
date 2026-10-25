@@ -38,7 +38,7 @@ public class GraficaLineaView extends LineChart<String, Number> {
     }
 
     //Regresa un arraylist de puros numeros de inicio a fin para asignarlo despues como eje
-    public static ArrayList<String> etiquetas(int inicio, int fin) {
+    public static ArrayList<String> generarEtiquetas(int inicio, int fin) {
         ArrayList<String> lista = new ArrayList<>();
         for (int i = inicio; i <= fin; i++) lista.add(i + "");
         return lista;
