@@ -2,10 +2,11 @@ package com.example.unidad3;
 
 public class dato {
     long tiempo;
-    long valor;
-    public dato(long tiempo, long valor){
+    long n;
+    public dato(long tiempo, long n){
         this.tiempo = tiempo;
-        this.valor = valor;
+        this.n = n;
     }
+
 
 }
