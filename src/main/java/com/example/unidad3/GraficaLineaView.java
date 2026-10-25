@@ -1,14 +1,15 @@
 package com.example.unidad3;
 
-import javafx.scene.chart.BarChart;
+
 import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 
 import java.util.ArrayList;
 
-public class GraficaView extends BarChart<String, Number> {
+public class GraficaLineaView extends LineChart<String, Number> {
 
-    public GraficaView(String titulo, String etiquetaX, String etiquetaY) {
+    public GraficaLineaView(String titulo, String etiquetaX, String etiquetaY) {
         super(new CategoryAxis(), new NumberAxis());
         setTitle(titulo);
         getXAxis().setLabel(etiquetaX);
