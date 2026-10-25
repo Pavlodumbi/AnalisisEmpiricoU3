@@ -9,9 +9,9 @@ import java.util.ArrayList;
 
 public class HelloApplication extends Application {
     BorderPane pane;
-    ArrayList<dato> iterativos;
-    ArrayList<dato> gaussianos;
-    ArrayList<dato> recursivos;
+    ArrayList<Medicion> iterativos;
+    ArrayList<Medicion> gaussianos;
+    ArrayList<Medicion> recursivos;
     public void start(Stage stage) {
         pane = new BorderPane();
         Scene scene = new Scene(pane, 320, 240);
@@ -19,6 +19,7 @@ public class HelloApplication extends Application {
         stage.setScene(scene);
         stage.show();
         crearDatos();
+        mostrarGraficas();
     }
 
     public void crearDatos(){
@@ -26,9 +27,14 @@ public class HelloApplication extends Application {
         gaussianos = new ArrayList<>();
         recursivos = new ArrayList<>();
         for(long n = 100; n <= 1000000000; n++ ){
-            iterativos.add(new dato(Sumatoria.iterativa0aN(n),n));
-            gaussianos.add(new dato(Sumatoria.sumatoriaDeGauss0aN(n),n));
-            recursivos.add(new dato(Sumatoria.sumaRecursiva0aN(n),n));
+            iterativos.add(new Medicion(Sumatoria.iterativa0aN(n),n));
+            gaussianos.add(new Medicion(Sumatoria.sumatoriaDeGauss0aN(n),n));
+            recursivos.add(new Medicion(Sumatoria.sumaRecursiva0aN(n),n));
         }
     }
+
+    public void mostrarGraficas(){
+        GraficaLineaView graficaIterativa = new GraficaLineaView("Grafica iterativa","n","tiempo NanoSegundos");
+    }
+
 }
