@@ -1,10 +1,7 @@
 package com.example.unidad3;
 
-
-
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
-
 import java.util.ArrayList;
 
 public class GraficaLineaView extends LineChart<Number, Number> {
@@ -25,9 +22,4 @@ public class GraficaLineaView extends LineChart<Number, Number> {
         }
         getData().add(serie);
     }
-
-
-
-
-
 }

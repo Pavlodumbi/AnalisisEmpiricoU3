@@ -23,7 +23,7 @@ public class SolucionesApplication extends Application {
     public void start(Stage stage) {
         pane = new BorderPane();
         Scene scene = new Scene(pane, 320, 240);
-        stage.setTitle("Hello!");
+        stage.setTitle("Soluciones Empiricas");
         stage.setScene(scene);
         stage.show();
         crearDatos();
@@ -38,8 +38,30 @@ public class SolucionesApplication extends Application {
         for(long n = 100; n <= 1000000000; n *= 10 ){
             iterativos.add(new Medicion(Sumatoria.iterativa0aN(n),n));
             gaussianos.add(new Medicion(Sumatoria.sumatoriaDeGauss0aN(n),n));
-            //recursivos.add(new Medicion(Sumatoria.sumaRecursiva0aN(n),n));
+            try{
+                recursivos.add(new Medicion(Sumatoria.sumaRecursiva0aN(n),n));
+            }
+            catch(StackOverflowError error){}
         }
+    }
+
+    public void crearBotones() {
+        Button btnIterativa = new Button("Grafica Iterativa");
+        Button btnGaussiana = new Button("Grafica Gaussiana");
+        Button btnRecursiva = new Button("Grafica Recursiva");
+
+        btnIterativa.setStyle("-fx-font-size: 24px;");
+        btnGaussiana.setStyle("-fx-font-size: 24px;");
+        btnRecursiva.setStyle("-fx-font-size: 24px;");
+
+        btnIterativa.setOnMouseClicked(ActionEvent -> pane.setCenter(graficaIterativa));
+        btnGaussiana.setOnMouseClicked(ActionEvent -> pane.setCenter(graficaGaussiana));
+        btnRecursiva.setOnMouseClicked(ActionEvent -> pane.setCenter(graficaRecursiva));
+        HBox caja = new HBox(10, btnIterativa, btnGaussiana, btnRecursiva);
+        caja.setAlignment(Pos.CENTER);
+        caja.setPadding(new Insets(10));
+
+        pane.setBottom(caja);
     }
 
     public void crearGraficas(){
@@ -55,20 +77,7 @@ public class SolucionesApplication extends Application {
         pane.setCenter(graficaIterativa);
     }
 
-    public void crearBotones() {
-        Button btnIterativa = new Button("Grafica Iterativa");
-        Button btnGaussiana = new Button("Grafica Gaussiana");
-        Button btnRecursiva = new Button("Grafica Recursiva");
 
-        btnIterativa.setOnMouseClicked(ActionEvent -> pane.setCenter(graficaIterativa));
-        btnGaussiana.setOnMouseClicked(ActionEvent -> pane.setCenter(graficaGaussiana));
-        btnRecursiva.setOnMouseClicked(ActionEvent -> pane.setCenter(graficaRecursiva));
-        HBox caja = new HBox(10, btnIterativa, btnGaussiana, btnRecursiva);
-        caja.setAlignment(Pos.CENTER);
-        caja.setPadding(new Insets(10));
-
-        pane.setBottom(caja);
-    }
 
 
 }
