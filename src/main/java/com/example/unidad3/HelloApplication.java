@@ -7,15 +7,20 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class HelloApplication extends Application {
-    @Override
+    BorderPane pane;
     public void start(Stage stage) {
-        BorderPane pane = new BorderPane();
+        pane = new BorderPane();
         Scene scene = new Scene(pane, 320, 240);
         stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.show();
+        realizarGraficas();
+    }
+
+    public void realizarGraficas(){
 
     }
 }
