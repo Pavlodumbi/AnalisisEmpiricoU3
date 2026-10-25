@@ -16,24 +16,17 @@ public class GraficaLineaView extends LineChart<Number, Number> {
         getYAxis().setLabel(etiquetaY);
     }
 
-    // x son los valores de n, y los valores en nano segundos
-    public void agregarSerie(String nombre, ArrayList<Long> x, ArrayList<Long> y) {
+    // Se manda el arrayList de mediciones y lo agrega como una serie a la grafica
+    public void agregarSerie(String nombre, ArrayList<Medicion> mediciones) {
         Series<Number, Number> serie = new Series<>();
         serie.setName(nombre);
-        for (int i = 0; i < x.size(); i++) {
-            serie.getData().add(new Data<>(x.get(i), y.get(i)));
+        for (Medicion dato : mediciones) {
+            serie.getData().add(new Data<>(dato.getN(), dato.getTiempo()));
         }
         getData().add(serie);
     }
 
-    public void generarEtiquetasX(ArrayList<Medicion> datos){
-        for(Medicion dato : datos){
 
-        }
-    }
-    public void generarEtiquetasY(ArrayList<Medicion> datos){
-
-    }
 
 
 
