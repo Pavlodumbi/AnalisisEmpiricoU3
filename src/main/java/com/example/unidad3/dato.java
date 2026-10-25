@@ -8,5 +8,13 @@ public class dato {
         this.n = n;
     }
 
+    public long getTiempo(){
+        return tiempo;
+    }
+
+    public long getN(){
+        return  n;
+    }
+
 
 }
